@@ -11,14 +11,14 @@ $(document).ready(function() {
 		playHadouken();
 		$(".ryu-ready").hide();
 		$(".ryu-throwing").show();
-		$(".hadouken").show().animate(
+		$(".hadouken").finish().show().animate(
 			{"left": "1020px"},
 			500,
 			function() {
 				$(this).hide();
 				$(this).css("left", "601px");
 			}
-		).finish();
+		);
 	})
 	.mouseup(function() {
 		$(".ryu-throwing").hide();
@@ -50,14 +50,14 @@ $(document).ready(function() {
 		playHadouken();
 		$(".hulk-ryu-ready").hide();
 		$(".hulk-ryu-throwing").show();
-		$(".hulk-hadouken").show().animate(
+		$(".hulk-hadouken").finish().show().animate(
 			{"left": "930px"},
 			500,
 			function() {
 				$(this).hide();
 				$(this).css("left", "510px");
 			}
-		).finish();
+		);
 	})
 	.mouseup(function() {
 		$(".hulk-ryu-throwing").hide();
