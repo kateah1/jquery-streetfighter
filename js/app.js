@@ -37,6 +37,45 @@ $(document).ready(function() {
 			$(".ryu-still").show();
 		}
 	});
+
+	$(".hulk-ryu").mouseenter(function() {
+		$(".hulk-ryu-still").hide();
+		$(".hulk-ryu-ready").show();
+	})
+	.mouseleave(function() {
+		$(".hulk-ryu-ready").hide();
+		$(".hulk-ryu-still").show();
+	})
+	.mousedown(function() {
+		playHadouken();
+		$(".hulk-ryu-ready").hide();
+		$(".hulk-ryu-throwing").show();
+		$(".hulk-hadouken").finish().show().animate(
+			{"left": "930px"},
+			500,
+			function() {
+				$(this).hide();
+				$(this).css("left", "510px");
+			}
+		);
+	})
+	.mouseup(function() {
+		$(".hulk-ryu-throwing").hide();
+		$(".hulk-ryu-ready").show();
+	});
+	$(window).keydown(function (e) {
+		if (e.keyCode == 77) {
+			$(".hulk-ryu-ready").hide();
+			$(".hulk-ryu-still").hide();
+			$(".hulk-ryu-cool").show();
+		}
+	})
+	$(window).keyup(function (e) {
+		if (e.keyCode == 77) {
+			$(".hulk-ryu-cool").hide();
+			$(".hulk-ryu-still").show();
+		}
+	});
 });
 function playHadouken() {
 	$("#hadouken-sound")[0].volume=0.5;
