@@ -57,7 +57,7 @@ $(document).ready(function() {
 				$(this).hide();
 				$(this).css("left", "510px");
 			}
-		)finish();
+		).finish();
 	})
 	.mouseup(function() {
 		$(".hulk-ryu-throwing").hide();
